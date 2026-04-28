@@ -24,4 +24,25 @@ public struct Transform
         Rotation = Quaternion.Identity;
         Scale = Vector3.One;
     }
+    
+    /// <summary>Creates a transform at the specified position and scale with identity rotation.</summary>
+    /// <param name="position">World-space position.</param>
+    /// <param name="scale">Scale factor per axis.</param>
+    public Transform(Vector3 position, Vector3 scale)
+    {
+        Position = position;
+        Rotation = Quaternion.Identity;
+        Scale = scale;
+    }
+    
+    /// <summary>Creates a transform at the specified position and scale with identity rotation.</summary>
+    /// <param name="position">World-space position.</param>
+    /// <param name="scale">Scale factor per axis.</param>
+    /// <param name="rotation">Rotation as a quaternion.</param>
+    public Transform(Vector3 position, Vector3 scale, Quaternion rotation)
+    {
+        Position = position;
+        Rotation = rotation;
+        Scale = scale;
+    }
 }

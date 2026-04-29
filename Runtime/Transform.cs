@@ -35,11 +35,11 @@ public struct Transform
         Scale = scale;
     }
     
-    /// <summary>Creates a transform at the specified position and scale with identity rotation.</summary>
+    /// <summary>Creates a transform at the specified position and rotation with unit scale.</summary>
     /// <param name="position">World-space position.</param>
     /// <param name="scale">Scale factor per axis.</param>
     /// <param name="rotation">Rotation as a quaternion.</param>
-    public Transform(Vector3 position, Vector3 scale, Quaternion rotation)
+    public Transform(Vector3 position, Quaternion rotation, Vector3 scale)
     {
         Position = position;
         Rotation = rotation;

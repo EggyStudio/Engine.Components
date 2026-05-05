@@ -41,4 +41,14 @@ public struct RenderMeshInstance
 
     /// <summary>Linear ambient-occlusion texture handle.</summary>
     public Handle<Texture> OcclusionTexture;
+
+    /// <summary>
+    /// Authoring-side <see cref="MaterialHandle"/> copied verbatim from the source
+    /// <see cref="Material.Handle"/>. The render world keys per-material Vulkan
+    /// pipelines, descriptor sets and uniform buffers by this handle (see the
+    /// MaterialX → GLSL pipeline cache). <see cref="MaterialHandle.IsValid"/> is
+    /// <c>false</c> for entities authored without a <see cref="MaterialLibrary"/>;
+    /// the renderer falls back to the shared static-white pipeline in that case.
+    /// </summary>
+    public MaterialHandle Material;
 }

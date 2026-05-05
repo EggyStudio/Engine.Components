@@ -69,6 +69,17 @@ public struct Material
     public Handle<Texture> OcclusionTexture;
 
     /// <summary>
+    /// Stable handle to the authoring <see cref="MaterialDescription"/> in the world's
+    /// <see cref="MaterialLibrary"/>. Populated by <see cref="SceneSpawner"/> (or by
+    /// gameplay code that authors materials through <see cref="MaterialLibrary.Create"/>).
+    /// The renderer keys per-material GPU pipelines (MaterialX-generated GLSL,
+    /// descriptor sets, uniform buffers) by this handle. <see cref="MaterialHandle.IsValid"/>
+    /// returns <c>false</c> when the entity carries only inline factors and should
+    /// render with the shared fallback pipeline.
+    /// </summary>
+    public MaterialHandle Handle;
+
+    /// <summary>
     /// Creates a material with only the albedo factor set. PBR factors default to
     /// metal=0 / rough=1 / emissive=0; texture slots are <see cref="Handle{T}.Invalid"/>.
     /// Convenience for callers that only need a flat-shaded color.
@@ -87,5 +98,6 @@ public struct Material
         NormalTexture = default;
         EmissiveTexture = default;
         OcclusionTexture = default;
+        Handle = default;
     }
 }

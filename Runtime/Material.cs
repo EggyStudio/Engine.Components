@@ -33,7 +33,7 @@ namespace Engine;
 public struct Material
 {
     /// <summary>
-    /// Base albedo / base-colour factor (linear RGBA, 0..1). Multiplied with
+    /// Base albedo / base-color factor (linear RGBA, 0..1). Multiplied with
     /// <see cref="BaseColorTexture"/>'s sample when one is bound.
     /// </summary>
     public Vector4 Albedo;
@@ -44,7 +44,7 @@ public struct Material
     /// <summary>Roughness factor [0..1]. Multiplied with <see cref="MetallicRoughnessTexture"/>'s green channel.</summary>
     public float RoughnessFactor;
 
-    /// <summary>Linear emissive RGB. Added to the lit colour; multiplied with <see cref="EmissiveTexture"/>'s sample.</summary>
+    /// <summary>Linear emissive RGB. Added to the lit color; multiplied with <see cref="EmissiveTexture"/>'s sample.</summary>
     public Vector3 EmissiveFactor;
 
     /// <summary>Normal-map scale (glTF <c>normalTexture.scale</c>).</summary>
@@ -53,7 +53,7 @@ public struct Material
     /// <summary>Occlusion-map strength (glTF <c>occlusionTexture.strength</c>).</summary>
     public float OcclusionStrength;
 
-    /// <summary>sRGB base-colour texture; <see cref="Handle{T}.Invalid"/> when unbound.</summary>
+    /// <summary>sRGB base-color texture; <see cref="Handle{T}.Invalid"/> when unbound.</summary>
     public Handle<Texture> BaseColorTexture;
 
     /// <summary>Linear metallic-roughness texture (glTF packing: B = metallic, G = roughness).</summary>
@@ -71,7 +71,7 @@ public struct Material
     /// <summary>
     /// Creates a material with only the albedo factor set. PBR factors default to
     /// metal=0 / rough=1 / emissive=0; texture slots are <see cref="Handle{T}.Invalid"/>.
-    /// Convenience for callers that only need a flat-shaded colour.
+    /// Convenience for callers that only need a flat-shaded color.
     /// </summary>
     /// <param name="albedo">RGBA albedo (0..1).</param>
     public Material(Vector4 albedo)

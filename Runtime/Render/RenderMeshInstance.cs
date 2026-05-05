@@ -27,7 +27,7 @@ public struct RenderMeshInstance
     /// <summary>Number of vertices (cached for draw calls).</summary>
     public int VertexCount;
 
-    /// <summary>sRGB base-colour texture handle; <see cref="Handle{T}.Invalid"/> when unbound.</summary>
+    /// <summary>sRGB base-color texture handle; <see cref="Handle{T}.Invalid"/> when unbound.</summary>
     public Handle<Texture> BaseColorTexture;
 
     /// <summary>Linear metallic-roughness texture handle.</summary>
